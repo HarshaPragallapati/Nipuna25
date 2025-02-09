@@ -29,10 +29,73 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <style>
-        
+        .footer-container {
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .sponsor-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+
+        .sponsor-box {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .sponsor-box img{
+            width: 160px;
+            height: 150px;
+            border-radius: 20%;
+            margin-bottom: 10px;
+        }
+
+        .small-sponsor-box {
+            width: 200px;
+            height: 150px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .row-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sponsor-title {
+            font-size: 20px;
+            color: #444;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
     </style>
 
-    
+    <style>
+        @media(min-width: 576px){
+            .event-info .image{
+            margin-right: 65px;
+        }
+        }
+    </style>
 </head>
 
 <body>
@@ -983,40 +1046,42 @@
     
             <!-- Partners Row -->
             <div class="sponsor-row">
-                <div class="sponsor-box">
-                    <h3 class="sponsor-title">Food Partner</h3>
-                    <div class="sponsor-box-inner">
-                        <img src="assets/images/sponsors/rayalasema ruchulu.jpg" alt="Food Partner">
+                <!-- <div> -->
+                    
+                    <div class="sponsor-box" style="width: 100%;height: 100%">
+                        <h3 class="sponsor-title">Food Partner</h3>
+                        <img src="assets/images/sponsors/rayalasema ruchulu.jpg" alt="Food Partner" style="width: 100%">
                         <!-- Add sponsor content here -->
                         
                     </div>
-                </div>
-                <div class="sponsor-box">
-                    <h3 class="sponsor-title">Media Partner</h3>
-                    <div class="sponsor-box-inner">
-                        <img src="assets/images/sponsors/BLACK LOGO.png" alt="Media Partner">
+                <!-- </div> -->
+                <!-- <div> -->
+                    
+                    <div class="sponsor-box" style="width: 100%;height: 100%">
+                        <h3 class="sponsor-title">Media Partner</h3>
+                        <img src="assets/images/sponsors/BLACK LOGO.png" alt="Media Partner" style="width: 100%">
                         <!-- Add sponsor content here -->
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
     
             <!-- Our Sponsors Row -->
             <h2 class="row-header">Our Sponsors</h2>
-            <div class="sponsor-row sponsor-row-2">
+            <div class="sponsor-row">
                 <div class="small-sponsor-box">
-                    <img src="assets/images/sponsors/iste al.jpg" alt="ISTE Alumni" style="height: 120px;">
+                    
                 </div>
                 <div class="small-sponsor-box">
-                    <img src="assets/images/sponsors/SRKREC copy.jpg" alt="SRKREC Alumni" style="height: 120px;">
+                    <img src="assets/images/sponsors/SRKREC copy.jpg" alt="SRKREC Alumni" style="height: 100%;width: 100%">
                 </div>
                 <div class="small-sponsor-box">
-                    <img src="assets/images/sponsors/edmium.jpg" alt="edmium" style="height: 125px;">
+                    <img src="assets/images/sponsors/edmium.jpg" alt="edmium" style="height: 100%;width: 100%">
                 </div>
                 <div class="small-sponsor-box">
-                    <img src="assets/images/sponsors/house of pops.jpg" alt="House of Pops" style="height: 125px;">
+                    <img src="assets/images/sponsors/house of pops.jpg" alt="House of Pops" style="height: 100%;width: 100%">
                 </div>
                 <div class="small-sponsor-box">
-                    <img src="assets/images/sponsors/RC copy.jpg" alt="Ravindra commercial">
+                    <img src="assets/images/sponsors/RC copy.jpg" alt="Ravindra commercial" style="height: 100%;width: 100%">
                 </div>
             </div>
         </div>
@@ -1056,7 +1121,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-6 mt-3">
                             <!-- Single Widget -->
-                            <div class="single-footer f-link">
+                            <div class="single-footer f-link" >
                                 <h3>Venue Location</h3>
                                 <div class="textwidget">
                                     <p class="d-none d-md-block"><span><i class="fas fa-calendar-alt"></i>21-22 February , 2025</span></p>
@@ -1076,9 +1141,10 @@
                                 <p class="d-none d-md-block">Don't miss a thing! Receive daily news. You should connect social area
                                     for proper updates anytime.</p>
                                 <p class="d-md-none">Don't miss a thing! Receive daily updates by following our social media handles.</p>
-                                <span class="social-title d-none d-md-block">
-                                    Follow Us On:
-                                </span>
+                               <div class="social-title d-none d-md-block" >
+                                    <span><center>Follow Us On:</center> </span>
+                                </div>
+                            <div >
                                 <ul class="social d-none d-md-block">
                                     <li>
                                         <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -1094,6 +1160,8 @@
                                     </li>
                                 </ul>
                             </div>
+
+                            </div>
                             <!-- End Single Widget -->
                         </div>
                         <div class="d-flex flex-column justify-content-center d-md-none">
@@ -1102,7 +1170,7 @@
                                     Follow Us On:
                                 </span>
                             </div>
-                            <div class="single-footer f-about" style="margin-top: 10px;">
+                            <div class="single-footer f-about" style="margin: 10px;">
                                 <ul class="social">
                                     <li>
                                         <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>

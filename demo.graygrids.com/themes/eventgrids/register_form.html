@@ -17,7 +17,7 @@
 <body>
     <h1>Student Registration</h1>
     <div class="container form-container">
-        <form action="http://localhost:3000/register" method="post">
+        <form id="registration-form">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -492,12 +492,56 @@
                                                         }
 
                                                         function submitPayment() {
-                                                            var cartTotalPrice = parseFloat(document.getElementById('cart-total-price').textContent.slice(1));
+    var missingFields = [];
 
-                                                            window.location.href = 'https://forms.gle/cKWuE14FaPcCh28fA'; // Redirect URL for cart total $200 or more
+    function getFieldValue(id) {
+        var field = document.getElementById(id);
+        if (!field || field.value.trim() === '') {
+            missingFields.push(id);
+            return null;
+        }
+        return field.value.trim();
+    }
 
-                                                        }
-                                                    </script>
+    var formData = {
+        name: getFieldValue('name'),
+        email: getFieldValue('email'),
+        phone: getFieldValue('phone'),
+        college: getFieldValue('College'),
+        year: getFieldValue('Year'),
+        course: getFieldValue('Course'),
+        location: getFieldValue('Location'),
+        amount: parseFloat(document.getElementById('cart-total-price')?.textContent) || 0,
+        selectedEvents: selectedEvents || None
+    };
+
+    if (missingFields.length > 0) {
+        alert("Please fill in the following fields:\n" + missingFields.join(', '));
+        return;
+    }
+    console.log(formData);  // Log the data to see what is being sent
+
+
+    if (formData.amount === 0) {
+        alert("Total amount cannot be zero! Please select at least one event.");
+        return;
+    }
+
+    fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); // Show success message
+        window.location.href = 'https://forms.gle/cKWuE14FaPcCh28fA'; // Redirect to payment
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+
+        </script>
 </body>
 
 </html>

@@ -471,98 +471,106 @@
 
                                                     <script>
                                                         var selectedEvents = {}; // Track selected events
-                                                
-                                                        function updateCart(checkbox) {
-                                                            var eventKey = checkbox.getAttribute("data-key"); // Unique key for each event
-                                                            var eventPrice = parseFloat(checkbox.getAttribute("data-price"));
-                                                            var fullRegistration = document.getElementById("event1"); // Full Registration checkbox
-                                                            
-                                                            // Get all checkboxes that should be disabled when Full Registration is selected
-                                                            var otherCheckboxes = document.querySelectorAll("input[type=checkbox]:not(#event1)");
-                                                
-                                                            if (checkbox.checked) {
-                                                                selectedEvents[eventKey] = eventPrice; // Use unique key
-                                                
-                                                                if (eventKey === "event1") { // Full Registration selected
-                                                                    otherCheckboxes.forEach(cb => {
-                                                                        cb.checked = false; // Uncheck other checkboxes
-                                                                        delete selectedEvents[cb.getAttribute("data-key")]; // Remove from selection
-                                                                        cb.disabled = true; // Disable other checkboxes
-                                                                    });
-                                                                } else {
-                                                                    // If any other event is selected, disable Full Registration
-                                                                    fullRegistration.checked = false;
-                                                                    delete selectedEvents["event1"];
-                                                                    fullRegistration.disabled = true;
-                                                                }
-                                                            } else {
-                                                                delete selectedEvents[eventKey];
-                                                                if (eventKey === "event1") {
-                                                                    otherCheckboxes.forEach(cb => {
-                                                                        cb.disabled = false;
-                                                                    });
-                                                                }
-                                                                if (Object.keys(selectedEvents).length === 0) {
-                                                                    fullRegistration.disabled = false;
-                                                                }
-                                                            }
-                                                
-                                                            updateCartTotal();
-                                                        }
-                                                    
-                                                        function updateCartTotal() {
-                                                            var cartTotalPrice = document.getElementById('cart-total-price');
-                                                            var totalAmount = Object.values(selectedEvents).reduce((sum, price) => sum + price, 0);
-                                                            cartTotalPrice.textContent = '' + totalAmount.toFixed(2);
-                                                        }
-                                                    
-                                                        function submitPayment() {
-                                                            var missingFields = [];
 
-                                                            function getFieldValue(id) {
-                                                                var field = document.getElementById(id);
-                                                                if (!field || field.value.trim() === '') {
-                                                                    missingFields.push(id);
-                                                                    return null;
-                                                                }
-                                                                return field.value.trim();
-                                                            }
+function updateCart(checkbox) {
+    var eventKey = checkbox.getAttribute("data-key"); 
+    var eventPrice = parseFloat(checkbox.getAttribute("data-price"));
+    var fullRegistration = document.querySelector("input[data-price='400']"); // Full Registration checkbox
+    var otherCheckboxes = document.querySelectorAll("input[type=checkbox]:not([data-price='400'])");
 
-                                                            var formData = {
-                                                                name: getFieldValue('name'),
-                                                                email: getFieldValue('email'),
-                                                                phone: getFieldValue('phone'),
-                                                                college: getFieldValue('College'),
-                                                                year: getFieldValue('Year'),
-                                                                course: getFieldValue('Course'),
-                                                                location: getFieldValue('Location'),
-                                                                amount: parseFloat(document.getElementById('cart-total-price')?.textContent) || 0,
-                                                                selectedEvents: selectedEvents
-                                                            };
+    if (checkbox.checked) {
+        // If full registration is clicked
+        if (eventPrice === 400) {
+            // Clear all other selections
+            selectedEvents = {};
+            selectedEvents["fullregistration"] = 400;
+            
+            // Uncheck and disable all other checkboxes
+            otherCheckboxes.forEach(cb => {
+                cb.checked = false;
+                cb.disabled = true;
+            });
+        } else {
+            // If any other event is clicked
+            selectedEvents[eventKey] = eventPrice;
+            // Disable full registration
+            fullRegistration.checked = false;
+            fullRegistration.disabled = true;
+        }
+    } else {
+        // If unchecking an event
+        if (eventPrice === 400) {
+            // If unchecking full registration
+            delete selectedEvents["fullregistration"]; // Remove full registration from selected events
+            // Enable all other checkboxes
+            otherCheckboxes.forEach(cb => {
+                cb.disabled = false;
+            });
+        } else {
+            // If unchecking any other event
+            delete selectedEvents[eventKey];
+            
+            // If no events are selected, enable full registration
+            if (Object.keys(selectedEvents).length === 0) {
+                fullRegistration.disabled = false;
+            }
+        }
+    }
 
-                                                            if (missingFields.length > 0) {
-                                                                alert("Please fill in the following fields:\n" + missingFields.join(', '));
-                                                                return;
-                                                            }
-                                                            console.log(formData);  // Log the data to see what is being sent
+    updateCartTotal();
+}
 
+function updateCartTotal() {
+    var cartTotalPrice = document.getElementById('cart-total-price');
+    var totalAmount = Object.values(selectedEvents).reduce((sum, price) => sum + price, 0);
+    cartTotalPrice.textContent = totalAmount.toFixed(2);
+}
 
-                                                            if (formData.amount === 0) {
-                                                                alert("Total amount cannot be zero! Please select at least one event.");
-                                                                return;
-                                                            }
+function submitPayment() {
+    var missingFields = [];
 
-                                                            fetch('http://localhost:3000/register', {
-                                                                method: 'POST',
-                                                                headers: { 'Content-Type': 'application/json' },
-                                                                body: JSON.stringify(formData)
-                                                            })
-                                                            .then(response => response.text())
-                                                            .then(data => {
-                                                                alert(data); 
-                                                            })
-                                                            .catch(error => console.error('Error:', error));
-                                                        }
+    function getFieldValue(id) {
+        var field = document.getElementById(id);
+        if (!field || field.value.trim() === '') {
+            missingFields.push(id);
+            return null;
+        }
+        return field.value.trim();
+    }
+
+    var formData = {
+        name: getFieldValue('name'),
+        email: getFieldValue('email'),
+        phone: getFieldValue('phone'),
+        college: getFieldValue('College'),
+        year: getFieldValue('Year'),
+        course: getFieldValue('Course'),
+        location: getFieldValue('Location'),
+        amount: parseFloat(document.getElementById('cart-total-price')?.textContent) || 0,
+        selectedEvents: selectedEvents
+    };
+
+    if (missingFields.length > 0) {
+        alert("Please fill in the following fields:\n" + missingFields.join(', '));
+        return;
+    }
+
+    if (formData.amount === 0) {
+        alert("Total amount cannot be zero! Please select at least one event.");
+        return;
+    }
+
+    fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+    })
+    .catch(error => console.error('Error:', error));
+}
                                                     </script>
                                                     
 </body>

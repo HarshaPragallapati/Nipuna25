@@ -8,6 +8,7 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -15,25 +16,35 @@ const htmlPath = __dirname;
 app.use(express.static(htmlPath));
 app.use(express.static(path.join(__dirname, "assets")));
 
+
 app.get("/", (req, res) => res.sendFile(path.join(htmlPath, "index.html")));
 app.get("/about-us", (req, res) => res.sendFile(path.join(htmlPath, "about-us.html")));
 app.get("/events", (req, res) => res.sendFile(path.join(htmlPath, "events.html")));
 app.get("/team", (req, res) => res.sendFile(path.join(htmlPath, "team.html")));
 app.get("/contact", (req, res) => res.sendFile(path.join(htmlPath, "contact.html")));
 
-// Connect to MongoDB Atlas
-const mongoURI = 'mongodb+srv://reddyvamsi39:ZAig0FoaaNPsyyOE@cluster1.uzhkvzu.mongodb.net/NIPUNA';
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('Connected to MongoDB Atlas'))
-    .catch(err => console.error('MongoDB connection error:', err));
 
-// Define Mongoose schemas and models
+
+// Connect to MongoDB Atlas
+mongoose.connect('mongodb+srv://reddyvamsi39:ZAig0FoaaNPsyyOE@cluster1.uzhkvzu.mongodb.net/NIPUNA', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('Connected to MongoDB Atlas'))
+.catch(err => console.error('MongoDB connection error:', err));
+
+// Contact Schema
 const contactSchema = new mongoose.Schema({
     name: String,
     subject: String,
     email: String,
-    message: String
+    message: String,
+    createdAt: { 
+        type: Date, 
+        default: Date.now 
+    }
 });
+
 const Contact = mongoose.model('Contact', contactSchema);
 
 const registrationSchema = new mongoose.Schema({
@@ -101,18 +112,44 @@ app.post('/register', async (req, res) => {
 // Contact form submission
 app.post('/submit-contact', async (req, res) => {
     try {
+        console.log('Received data:', req.body);
+        
         const { name, subject, email, message } = req.body;
+        
+        // Debug log
+        console.log('Extracted fields:', { name, subject, email, message });
+        
+        // Validate required fields
         if (!name || !subject || !email || !message) {
-            return res.status(400).send('All fields are required.');
+            console.log('Missing fields:', { name, subject, email, message });
+            return res.status(400).json({ 
+                error: 'All fields are required',
+                received: { name, subject, email, message }
+            });
         }
-        const newContact = new Contact({ name, subject, email, message });
+        
+        // Create new contact document
+        const newContact = new Contact({
+            name,
+            subject,
+            email,
+            message
+        });
+        
+        // Save to database
         await newContact.save();
-        res.status(200).send('Message submitted successfully!');
+        console.log('Saved contact:', newContact);
+        
+        res.status(200).json({ message: 'Message submitted successfully!' });
     } catch (error) {
-        console.error('Error inserting data:', error);
-        res.status(500).send('Server error');
+        console.error('Error saving contact:', error);
+        res.status(500).json({ 
+            error: 'An error occurred while submitting your message',
+            details: error.message
+        });
     }
 });
+
 
 app.listen(port, () => {
     console.log("Server running at http://localhost:3000");

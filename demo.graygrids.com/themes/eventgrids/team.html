@@ -186,9 +186,11 @@
                                 color: #fff; 
                                 }
 
-                                .navbar-nav .nav-item a:hover {
-                                transform: scale(1.2);
-                                color: gold !important;
+                                @media(min-width: 576px){
+                                    .navbar-nav .nav-item a:hover {
+                                transform: scale(1.2); /* Scale up the link slightly */
+                                color: gold !important; /* Change color on hover (you can adjust the color as needed) */
+                                }
                                 }
                             </style>
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">

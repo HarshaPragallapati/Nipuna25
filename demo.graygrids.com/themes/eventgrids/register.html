@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/register.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Student Registration</h1>
+    <div class="container form-container">
+        <form action="http://localhost:3000/register" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="College">College:</label>
+                <input type="text" class="form-control" id="College" name="College" required>
+            </div>
+            <div class="form-group">
+                <label for="Year">Year:</label>
+                <input type="text" class="form-control" id="Year" name="Year" required>
+            </div>
+            <div class="form-group">
+                <label for="Course">Course:</label>
+                <input type="text" class="form-control" id="Course" name="Course" required>
+            </div>
+            <div class="form-group">
+                <label for="Location">Location:</label>
+                <input type="text" class="form-control" id="Location" name="Location" required>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="container">
+        <h1 class="text-center mt-5 mb-5">Event Registration</h1>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Full Registration</h5>
+                        <!-- <p class="card-text">Description of Event 1</p> -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="event1" data-price="400"
+                                onchange="updateCart(this)">
+                            <label class="form-check-label" for="event1">Add to Cart</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="event1-amount">Registration Amount: 400/-</label>
+                            <input type="text" class="form-control" id="event1-amount" value="400" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <!-- Event 1 -->
+            <div class="col-md-4">
+                <div class="card event-card">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Combo 1</h5>
+                        <!-- <p class="card-text">Description of Event 1</p> -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="event2" data-key="combo1" data-price="149"
+                                onchange="updateCart(this)">
+                            <label class="form-check-label" for="event2">Add to Cart</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="event1-amount">Registration Amount: 149/-</label>
+                            <input type="text" class="form-control" id="event1-amount" value="149" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Event 2 -->
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <div class="card-body">
+                        <h5 class="card-title">combo 2</h5>
+                        <!-- <p class="card-text">Description of Event 2</p> -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="event2" data-key="combo2" data-price="149"
+                                onchange="updateCart(this)">
+                            <label class="form-check-label" for="event2">Add to Cart</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="event2-amount">Registration Amount: 149/-</label>
+                            <input type="text" class="form-control" id="event2-amount" value="149" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Combo 3</h5>
+                        <!-- <p class="card-text">Description of Event 2</p> -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="event2" data-key="combo3" data-price="149"
+                                onchange="updateCart(this)">
+                            <label class="form-check-label" for="event2">Add to Cart</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="event2-amount">Registration Amount: 149/-</label>
+                            <input type="text" class="form-control" id="event2-amount" value="149" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt-5">
+                    <!-- Event 1 -->
+                    <div class="col-md-4">
+                        <div class="card event-card">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Code Combat</h5>
+                                <!-- <p class="card-text">Description of Event 1</p> -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="event3" data-key="codecombat" data-price="60"
+                                        onchange="updateCart(this)">
+                                    <label class="form-check-label" for="event3">Add to Cart</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event1-amount">Registration Amount: 60/-</label>
+                                    <input type="text" class="form-control" id="event1-amount" value="60" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Event 2 -->
+                    <div class="col-md-4">
+                        <div class="card event-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Mechonica</h5>
+                                <!-- <p class="card-text">Description of Event 2</p> -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="event3" data-key="mechonica" data-price="60"
+                                        onchange="updateCart(this)">
+                                    <label class="form-check-label" for="event3">Add to Cart</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event2-amount">Registration Amount: 60/-</label>
+                                    <input type="text" class="form-control" id="event2-amount" value="60" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card event-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Struqta</h5>
+                                <!-- <p class="card-text">Description of Event 2</p> -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="event3" data-key="Struqta" data-price="60"
+                                        onchange="updateCart(this)">
+                                    <label class="form-check-label" for="event3">Add to Cart</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event2-amount">Registration Amount: 60/-</label>
+                                    <input type="text" class="form-control" id="event2-amount" value="60" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row mt-5">
+                            <!-- Event 1 -->
+                            <div class="col-md-4">
+                                <div class="card event-card">
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Electrolance</h5>
+                                        <!-- <p class="card-text">Description of Event 1</p> -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="event3"data-key="Electrolance" data-price="60"
+                                                onchange="updateCart(this)">
+                                            <label class="form-check-label" for="event3">Add to Cart</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="event1-amount">Registration Amount: 60/-</label>
+                                            <input type="text" class="form-control" id="event1-amount" value="60"
+                                                readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Event 2 -->
+                            <div class="col-md-4">
+                                <div class="card event-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Presencia</h5>
+                                        <!-- <p class="card-text">Description of Event 2</p> -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="event3" data-key="Presencia"data-price="60"
+                                                onchange="updateCart(this)">
+                                            <label class="form-check-label" for="event3">Add to Cart</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="event2-amount">Registration Amount: 60/-</label>
+                                            <input type="text" class="form-control" id="event2-amount" value="60"
+                                                readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card event-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Poster Arena</h5>
+                                        <!-- <p class="card-text">Description of Event 2</p> -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="event3" data-key="Posterarena"data-price="60"
+                                                onchange="updateCart(this)">
+                                            <label class="form-check-label" for="event3">Add to Cart</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="event2-amount">Registration Amount: 60/-</label>
+                                            <input type="text" class="form-control" id="event2-amount" value="60"
+                                                readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container">
+                                <div class="row mt-5">
+                                    <!-- Event 1 -->
+                                    <div class="col-md-4">
+                                        <div class="card event-card">
+
+                                            <div class="card-body">
+                                                <h5 class="card-title">Model Marathon</h5>
+                                                <!-- <p class="card-text">Description of Event 1</p> -->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="event3"data-key="modelmarathon"
+                                                        data-price="60" onchange="updateCart(this)">
+                                                    <label class="form-check-label" for="event3">Add to Cart</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="event1-amount">Registration Amount: 60/-</label>
+                                                    <input type="text" class="form-control" id="event1-amount"
+                                                        value="60" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Event 2 -->
+                                    <div class="col-md-4">
+                                        <div class="card event-card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Model United Nations</h5>
+                                                <!-- <p class="card-text">Description of Event 2</p> -->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="event3"data-key="modelun"
+                                                        data-price="60" onchange="updateCart(this)">
+                                                    <label class="form-check-label" for="event3">Add to Cart</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="event2-amount">Registration Amount: 60/-</label>
+                                                    <input type="text" class="form-control" id="event2-amount"
+                                                        value="60" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card event-card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Word Sphere</h5>
+                                                <!-- <p class="card-text">Description of Event 2</p> -->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="event3"data-key="wordsphere"
+                                                        data-price="60" onchange="updateCart(this)">
+                                                    <label class="form-check-label" for="event3">Add to Cart</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="event2-amount">Registration Amount: 60/-</label>
+                                                    <input type="text" class="form-control" id="event2-amount"
+                                                        value="60" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container">
+
+                                        <div class="row mt-5">
+                                            <!-- Event 1 -->
+                                            <div class="col-md-4">
+                                                <div class="card event-card">
+
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">IPL Auction</h5>
+                                                        <!-- <p class="card-text">Description of Event 1</p> -->
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="event3"data-key="ipl"
+                                                                data-price="60" onchange="updateCart(this)">
+                                                            <label class="form-check-label" for="event3">Add to
+                                                                Cart</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="event1-amount">Registration Amount: 60/-</label>
+                                                            <input type="text" class="form-control" id="event1-amount"
+                                                                value="60" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Event 2 -->
+                                            <div class="col-md-4">
+                                                <div class="card event-card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Mind Quest</h5>
+                                                        <!-- <p class="card-text">Description of Event 2</p> -->
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="event3"data-key="mindquest"
+                                                                data-price="60" onchange="updateCart(this)">
+                                                            <label class="form-check-label" for="event3">Add to
+                                                                Cart</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="event2-amount">Registration Amount: 60/-</label>
+                                                            <input type="text" class="form-control" id="event2-amount"
+                                                                value="60" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card event-card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Business Capital</h5>
+                                                        <!-- <p class="card-text">Description of Event 2</p> -->
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="event3"data-key="business"
+                                                                data-price="60" onchange="updateCart(this)">
+                                                            <label class="form-check-label" for="event3">Add to
+                                                                Cart</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="event2-amount">Registration Amount: 60/-</label>
+                                                            <input type="text" class="form-control" id="event2-amount"
+                                                                value="60" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container">
+
+                                                <div class="row mt-5">
+                                                    <!-- Event 1 -->
+                                                    <div class="col-md-4">
+                                                        <div class="card event-card">
+
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Mystery Mansion</h5>
+                                                                <!-- <p class="card-text">Description of Event 1</p> -->
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"data-key="mystery"
+                                                                        id="event3" data-price="60"
+                                                                        onchange="updateCart(this)">
+                                                                    <label class="form-check-label" for="event3">Add to
+                                                                        Cart</label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="event1-amount">Registration
+                                                                        Amount: 60/-</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="event1-amount" value="60" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Event 2 -->
+                                                    <div class="col-md-4">
+                                                        <div class="card event-card">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Uniqus</h5>
+                                                                <!-- <p class="card-text">Description of Event 2</p> -->
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"data-key="uniqus"
+                                                                        id="event3" data-price="60"
+                                                                        onchange="updateCart(this)">
+                                                                    <label class="form-check-label" for="event3">Add to
+                                                                        Cart</label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="event2-amount">Registration
+                                                                        Amount: 60/-</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="event2-amount" value="60" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="card event-card">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Art Space</h5>
+                                                                <!-- <p class="card-text">Description of Event 2</p> -->
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"data-key="artspace"
+                                                                        id="event3" data-price="60"
+                                                                        onchange="updateCart(this)">
+                                                                    <label class="form-check-label" for="event3">Add to
+                                                                        Cart</label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="event2-amount">Registration
+                                                                        Amount: 60/-</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="event2-amount" value="60" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="card event-card">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Genesis</h5>
+                                                                <!-- <p class="card-text">Description of Event 2</p> -->
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"data-key="genesis"
+                                                                        id="event3" data-price="60"
+                                                                        onchange="updateCart(this)">
+                                                                    <label class="form-check-label" for="event3">Add to
+                                                                        Cart</label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="event2-amount">Registration
+                                                                        Amount: 60/-</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="event2-amount" value="60" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                    <div class="container payment-container">
+                                                        <h2>Payment</h2>
+                                                        <div class="form-group">
+                                                            <label for="cart-total-price">Cart Total:</label>
+                                                            <span id="cart-total-price">0</span>
+                                                        </div>
+                                                        <button type="button" class="payment-button"
+                                                            onclick="submitPayment()">Pay</button>
+                                                    </div>
+
+                                                    <script>
+                                                        var selectedEvents = {}; // Track selected events
+                                                
+                                                        function updateCart(checkbox) {
+                                                            var eventKey = checkbox.getAttribute("data-key"); // Unique key for each event
+                                                            var eventPrice = parseFloat(checkbox.getAttribute("data-price"));
+                                                            var fullRegistration = document.getElementById("event1"); // Full Registration checkbox
+                                                            
+                                                            // Get all checkboxes that should be disabled when Full Registration is selected
+                                                            var otherCheckboxes = document.querySelectorAll("input[type=checkbox]:not(#event1)");
+                                                
+                                                            if (checkbox.checked) {
+                                                                selectedEvents[eventKey] = eventPrice; // Use unique key
+                                                
+                                                                if (eventKey === "event1") { // Full Registration selected
+                                                                    otherCheckboxes.forEach(cb => {
+                                                                        cb.checked = false; // Uncheck other checkboxes
+                                                                        delete selectedEvents[cb.getAttribute("data-key")]; // Remove from selection
+                                                                        cb.disabled = true; // Disable other checkboxes
+                                                                    });
+                                                                } else {
+                                                                    // If any other event is selected, disable Full Registration
+                                                                    fullRegistration.checked = false;
+                                                                    delete selectedEvents["event1"];
+                                                                    fullRegistration.disabled = true;
+                                                                }
+                                                            } else {
+                                                                delete selectedEvents[eventKey];
+                                                                if (eventKey === "event1") {
+                                                                    otherCheckboxes.forEach(cb => {
+                                                                        cb.disabled = false;
+                                                                    });
+                                                                }
+                                                                if (Object.keys(selectedEvents).length === 0) {
+                                                                    fullRegistration.disabled = false;
+                                                                }
+                                                            }
+                                                
+                                                            updateCartTotal();
+                                                        }
+                                                    
+                                                        function updateCartTotal() {
+                                                            var cartTotalPrice = document.getElementById('cart-total-price');
+                                                            var totalAmount = Object.values(selectedEvents).reduce((sum, price) => sum + price, 0);
+                                                            cartTotalPrice.textContent = '' + totalAmount.toFixed(2);
+                                                        }
+                                                    
+                                                        function submitPayment() {
+                                                            var cartTotalPrice = parseFloat(document.getElementById('cart-total-price').textContent);
+                                                            window.location.href = 'https://forms.gle/cKWuE14FaPcCh28fA'; // Redirect URL
+                                                        }
+                                                    </script>
+                                                    
+</body>
+
+</html>

@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Events</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/NIPUNAHD.png" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="/assets/css/animate.css" />
+    <link rel="stylesheet" href="/assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <style>
+        
+    /* ------------------------------------------------------*/
+        .eventsPage {
+            margin: 1rem auto 0rem;
+            padding: 0.7rem;
+        }
+
+        .events-display {
+            margin: auto;
+            padding: 1rem;
+            background-color: #0d1028;
+            border-radius: 0.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .event-content h5 {
+            font-size: 16px;
+            font-weight: 1000;
+        }
+
+        #myInput {
+            width: 300px;
+            height: 43px;
+        }
+
+        #list {
+            position: absolute;
+            left: 74%;
+            right: 14%;
+            top: 70%;
+            list-style: none;
+            border: 1px solid black;
+            padding: 5px 10px 5px 10px;
+            background-color: white;
+            display: none;
+            z-index: 3;
+        }
+
+        #list li {
+            color: black;
+        }
+
+        .card {
+            margin: 2rem auto;
+            padding: 0.8rem;
+            border: none;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 0.2rem;
+            box-shadow: 0 10px 15px solid black;
+            max-height: fit-content;
+            max-width: fit-content;
+        }
+
+        .card:hover {
+            box-shadow: rgba(1, 1, 1, 1) 0px 15px 30px;
+            transform: scale(1.1);
+        }
+
+        .event-content {
+            padding: 0.1rem;
+        }
+
+        .cardImg img {
+            height: 250px;
+            width: 300px;
+        }
+
+        .cardImg:hover {
+            transform: scale(1);
+        }
+
+
+        .events-filter {
+            margin: 100px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .eventsPage .event-btn {
+            margin: 10px;
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: #eef2eb;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .eventsPage .event-btn:hover {
+            background-color: #ddd;
+        }
+
+        .event-content button {
+            background-color: #99c0cf;
+            font-size: 14px;
+            padding: 5px;
+            margin: 8px;
+        }
+
+        .event-content button:hover {
+            background-color: green;
+            color: white;
+        }
+
+        .descBtn {
+            margin: 0 6px;
+            border: none;
+            height: 40px;
+            width: 85px;
+        }
+  
+        .regBtn {
+            margin: 0 6px;
+            border: none;
+        }
+
+        .popup-card {
+            background-color: white;
+            display: none;
+            position: fixed;
+            bottom: 30%;
+            right: 30%;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            text-align: center;
+            padding: 30px;
+            width: 40%;
+        }
+
+        .popup-card .btn {
+            background-color: #522bec;
+            color: white;
+            font-size: 15px;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 20%;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width:400px) {
+            .eventsPage .filter-btn{
+                
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;    
+                justify-content: flex-start;
+                /* align-items: flex-start; */
+                
+            }
+            .cardImg {
+                height: 180px;
+                width: 270px;
+                object-fit: cover;
+            }
+
+            .cardImg img{
+                height: 180px;
+                width: 180px;
+            }
+
+            .event-content button {
+                font-size: 12px;
+                padding: 5px;
+                margin: 5px;
+            }
+
+            #list {
+                left: 27%;
+                right: 35%;
+                top: 125%;
+            }
+        }
+
+        @media screen and (max-width:350px) {
+            .cardImg {
+                height: 150px;
+                width: 225px;
+                object-fit: cover;
+            }
+
+            .event-content {
+                padding: 0.8rem;
+            }
+        }
+
+        @media screen and (max-width:300px) {
+            .cardImg {
+                height: 140px;
+                width: 180px;
+                object-fit: cover;
+            }
+            
+            .cardImg img{
+                height: 170px;
+            }
+
+            .event-content h5 {
+                font-size: 12px;
+                font-weight: 1000;
+            }
+            
+            .event-content h6{
+                font-size: 14px;
+            }
+            
+            .event-content {
+                padding: 0.7rem;
+            }
+        }
+
+
+        @media screen and (max-width:1300px) {
+            .eventsPage .event-btn {
+                margin: 10px;
+                padding: 12px 16px;
+            }
+
+            .filter-search input {
+                padding: 5px;
+                width: 200px;
+                height: 30px;
+                margin: 10px auto;
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            #myInput {
+                width: 200px;
+                height: 43px;
+            }
+
+            .popup-card{
+                bottom: 22%;
+                font-size: 12px;
+                z-index: 9;
+                text-align: center;
+                padding: 15px;
+                width: 80%;
+                right: 10%;
+                background-color: black;
+                color: white;
+            }
+
+            .popup-card h2{
+                font-size: 18px;
+                color: white;
+            }
+
+            .popup-card .btn {
+                width: 50px;
+                padding: 10px;
+                font-size: 8px;
+            }
+            
+            .presencia{
+                bottom: 0%;
+                font-size: 10px;
+                width: 200%;
+                right: 20%;
+                text-align: center;
+            }
+
+        }
+
+        @media screen and (max-width:380px) {
+            #myInput {
+                width: 150px;
+                height: 43px;
+            }
+        }
+        
+        @media (max-width: 300px){
+            .descBtn{
+                height: 35px;
+                width: 75px;
+            }
+           
+        }
+        
+        .presencia{
+            bottom: 0%;
+            padding: 20px;
+            right: 25%;
+        }
+        
+        .com-img{
+            width: 250px !important;
+        }
+        
+        @media (max-width: 576px)
+        {
+            .com-img{
+                width: 180px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+<!-- Preloader -->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+  <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html" style="color: white;">
+                                <img src="assets/images/NIPUNAHD.png" alt="Logo">NIPUNA 2025
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>  
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <style>
+                                .navbar-nav .nav-item a {
+                                text-decoration: none;
+                                transition: transform 0.3s ease-in-out, color 0.3s ease; 
+                                color: #fff; /* Set default text color */
+                                }
+
+                                @media(min-width: 576px){
+                                    .navbar-nav .nav-item a:hover {
+                                transform: scale(1.2); /* Scale up the link slightly */
+                                color: gold !important; /* Change color on hover (you can adjust the color as needed) */
+                                }
+                                }
+                            </style>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="index.html" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="about-us.html" aria-label="Toggle navigation">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="events.html" aria-label="Toggle navigation">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="team.html" aria-label="Toggle navigation">Team</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="contact.html" aria-label="Toggle navigation">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">SRKR ISTE (2024-2025)</h1>
+                        <ul class="breadcrumb-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li>SRKR ISTE (2024-2025)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    
+    <div class="eventsPage">
+        <div class="events-filter" id="myBtnContainer">
+            <div class="filter-btn">
+                <button class="event-btn" onclick="filterSelection('all')"> Show all</button>
+                <button class="event-btn" onclick="filterSelection('Tech')"> Technical</button>
+                <button class="event-btn" onclick="filterSelection('Manage')">Managerial</button>
+                <button class="event-btn" onclick="filterSelection('Present')"> Presentational</button>
+                <button class="event-btn" onclick="filterSelection('lit')"> Literature</button>
+                <button class="event-btn" onclick="filterSelection('Art')"> Artistic</button>
+            </div>
+            <div class="filter-search">
+                <div class="search-container">
+                    <input type="text" id="myInput" placeholder="Search" onkeyup="handleSearchInput()">
+                    <button id="searchButton" onclick="performSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <style>
+                    .search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#searchButton {
+    height: 43px;
+    width: 43px;
+    background-color: #21d185;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #1ab172;
+}
+
+#searchButton i {
+    font-size: 18px;
+}
+
+/* Update existing styles */
+#myInput {
+    width: 300px;
+    height: 43px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0 12px;
+}
+
+@media screen and (max-width: 500px) {
+    #myInput {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #myInput {
+        width: 150px;
+    }
+}
+                </style>
+                <ul id="list">
+                    <li class="item"><a href="#alliance" style="text-decoration: none;">Alliance</a></li>
+                    <li class="item"><a href="#artSpace" style="text-decoration: none;">Art Space</a></li>
+                    <li class="item"><a href="#businessCapital" style="text-decoration: none;">Business Capital</a></li>
+                    <li class="item"><a href="#clickOMania" style="text-decoration: none;">Click O Mania</a></li>
+                    <li class="item"><a href="#codeCombat" style="text-decoration: none;">Code Combat</a></li>
+                    <li class="item"><a href="#electrolance" style="text-decoration: none;">Electrolance</a></li>
+                    <li class="item"><a href="#iplAuction" style="text-decoration: none;">IPL Auction</a></li>
+                    <li class="item"><a href="#mechonica" style="text-decoration: none;">Mechonica</a></li>
+                    <li class="item"><a href="#mindQuest" style="text-decoration: none;">Mind Quest</a></li>
+                    <li class="item"><a href="#modelMarathon" style="text-decoration: none;">Model Marathon</a></li>
+                    <li class="item"><a href="#modelUnitedNations" style="text-decoration: none;">Model United
+                            Nations</a></li>
+                    <li class="item"><a href="#mysteryMansion" style="text-decoration: none;">Mystery Mansion</a></li>
+                    <li class="item"><a href="#posterArena" style="text-decoration: none;">Poster Arena</a></li>
+                    <li class="item"><a href="#presencia" style="text-decoration: none;">Presencia</a></li>
+                    <li class="item"><a href="#struqta" style="text-decoration: none;">Struqta</a></li>
+                    <li class="item"><a href="#uniqus" style="text-decoration: none;">Uniqus</a></li>
+                    <li class="item"><a href="#wordSphere" style="text-decoration: none;">Word Sphere</a></li>
+                    <p id="demo">No Results</p>
+                </ul>
+            </div>
+        </div>
+        <div class="events-display">
+            <div class="card Tech filterDiv" id="codeCombat">
+                <div class="cardImg">
+                    <img src="/assets/images/events/code combat.jpg" alt="Img">
+                </div>
+                <br>
+                <div class="event-content">
+                    <h5>CODE COMBAT</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id1')">Description</button>
+                      <div class="button">
+                                <a class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                      </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id1">
+                    <h2>CODE COMBAT</h2>
+                    <li>The participants should register individually.</li>
+                    <li>Each person will be allowed to use single pc only.</li>
+                    <li>Each participant should submit a single solution to each problem.</li>
+                    <li>It consists of 2 categories : Programming and Web designing.</li>
+                    <li>Final winner will be selected by panel of judges only.</li>
+                    <li>Contact: 9573576544</li>
+                    <button type="button" class="btn cancel" onclick="closeForm('popup-id1')">Close</button>
+            </div>
+
+
+
+            <div class="card Tech  filterDiv" id="mechonica">
+                <div class="cardImg">
+                    <img src="/assets/images/events/mechonica rgb.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MECHONICA</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id2')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id2">
+                <h2>MECHONICA</h2>
+                <li>It includes 3 rounds</li>
+                <li>1st Round consists of theory and problematic questions based on Mechanical Engineering.</li>
+                <li>2nd Round : Name the unknown parts and explain its working.</li>
+                <li>3rd Round : One diagarm will be shown on the projector, and they have to draw on
+                    CAM/CAD/CATIA in a specific time.</li>
+                <li>Contact: 7569177485</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id2')">Close</button>
+            </div>
+
+
+
+            <div class="card Tech filterDiv" id="electrolance">
+                <div class="cardImg">
+                    <img src="/assets/images/events/electrolance.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>ELECTROLANCE</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id3')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id3">
+                <h2>ELECTROLANCE</h2>
+                <li>1st round screening questions will be asked based on aptitude.</li>
+                <li>2nd round questions related to ECE and EEE.</li>
+                <li>3rd round is mock interview.</li>
+                <li>Contact: 9063656569</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id3')">Close</button>
+            </div>
+
+
+
+            <div class="card Tech filterDiv" id="struqta">
+                <div class="cardImg">
+                    <img src="/assets/images/events/struqta.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>STRUQTA</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id4')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id4">
+                <h2>STRUQTA</h2>
+                <li>Round 1-Multiple choice questions on aptitude and core related.</li>
+                <li>Round 2-PPT questions</li>
+                <li>We will display some questions related to core and famous places you have to answer it.</li>
+                <li>Round 3-Buliding design drawing.</li>
+                <li>Contact: 6300900493</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id4')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="businessCapital">
+                <div class="cardImg">
+                    <img src="/assets/images/events/Business capital.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>BUSINESS CAPITAL</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id5')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id5">
+                <h2>BUSINESS CAPITAL</h2>
+                <li>In this event you will be having 2 rounds.</li>
+                <li>1st Round consists of problems related to basic math.</li>
+                <li>2nd Round : Qualified persons will be divided into 2 groups i. Stocks ii. Tenders</li>
+                <li>Judgement criteria is based on the optimal usage of money.</li>
+                <li>Contact: 9858203786</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id5')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="mindQuest">
+                <div class="cardImg">
+                    <img src="/assets/images/events/mindquest.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MIND-QUEST</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id6')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id6">
+                <h2>MIND-QUEST</h2>
+                <li>In this event you will be having 3 rounds</li>
+                <li>1st round consists of logical questions, tricks and puzzles</li>
+                <li>2nd round: Qualified persons should solve some logical questions, tricks, puzzles</li>
+                <li>3rd round: 1 vs 1 there will be some rules following those they should answer some questions. </li>
+                <li>All three rounds has time limit.</li>
+                <li>Contact: 7013698278</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id6')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="alliance">
+                <div class="cardImg">
+                    <img src="/assets/images/events/genisis.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>CASCADE</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id7')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id7">
+                <h2>CASCADE</h2>
+                <li>This event is open for students from all branches. </li>
+                <li>It is our Nipuna theme based event and participate in this to explore our theme more.</li>
+                <li>Contact: 9618181690</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id7')">Close</button>
+            </div>
+
+            <div class="card Manage filterDiv" id="mysteryMansion">
+                <div class="cardImg">
+                    <img src="/assets/images/events/mystery mansion.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MYSTERY MANSION</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id8')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id8">
+                <h2>MYSTERY MANSION</h2>
+                <li>It consists of 3 Rounds.</li>
+                <li>1st Round is Screening Test.</li>
+                <li>2nd Round : Teams are formed and they have to search for treasures.</li>
+                <li>3rd Round : Investigation, you have to investigate the case with in the given time.</li>
+                <li>Contact: 9100259275</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id8')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="iplAuction">
+                <div class="cardImg">
+                    <img src="/assets/images/events/ipl.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>IPL AUCTION</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id9')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id9">
+                <h2>IPL AUCTION</h2>
+                <li>Need to Update!</li>
+                <li>Contact: 7995592137</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id9')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="uniqus">
+                <div class="cardImg">
+                    <img src="/assets/images/events/UNIQUS.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>UNIQUS</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id10')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id10">
+                <h2>UNIQUS</h2>
+                <li>This event consists of total 4 Rounds.</li>
+                <li>1st Round : Screening Test where you will be given with set of questions.</li>
+                <li>2nd and 3rd Rounds : different ppts will be displayed and you need to present in your unique way.
+                </li>
+                <li>4th Round : It's a Special Round revealed only on the day of event.</li>
+                <li>Final winner will be selected by panel of judges only.</li>
+                <li>Contact: 6300900493</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id10')">Close</button>
+            </div>
+
+
+
+            <div class="card Present filterDiv" id="posterArena">
+                <div class="cardImg">
+                    <img src="/assets/images/events/posterarenargbs.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>POSTER ARENA</h5>
+                    <h6>Fee: 399/- (By Full Registration)</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id11')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id11">
+                <h2>POSTER ARENA</h2>
+                <p>This event is open for all the branch people. </p>
+                <li>Contact: 7095389239</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id11')">Close</button>
+            </div>
+
+
+
+            <div class="card Present filterDiv" id="presencia">
+                <div class="cardImg">
+                    <img src="/assets/images/events/Presencia.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>PRESENCIA</h5>
+                    <h6>Fee: 399/- (By Full Registration)</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id12')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card presencia" id="popup-id12">
+                <h2>PRESENCIA</h2>
+                <li>RULES</li>
+                <li>A team should consist of a maximum of 2 members.</li>
+                <li>Submission of Abstract should follow the IEEE standard format with not more than 300 words.</li>
+                <li>Only participants who qualify in preliminary abstract submission will be eligible for presentation.</li>
+                <li>The presentation should last a maximum of 8 minutes. There will be a questionnaire session followed by for 2 minutes</li>
+                <li>Ppt should be sent to the respective Mail ids provided below.</li>
+                <li>ECE & EEE : presenciaeceeee@gmail.com</li>
+                <li>MECHANICAL : mechanicalpresencia@gmail.com</li>
+                <li>CIVIL : presenciacivil@gmail.com</li>
+                <li>CSE : presenciacse@gmail.com</li>
+                <li>IT:presenciait@gmail.com</li>
+                <li>MISC : presenciamisc@gmail.com</li>
+               
+                <li>IEEE RULES</li>
+                
+                <li>All manuscripts must be in English</li>
+                <li>Normal text is to be single-spaced in 10-point Times or Times Roman with 12-point interline spacing, in the two-column format.</li>
+                <li>The entire text is to be justified.</li>
+                <li>The number of slides should not exceed 12.</li>
+                <li>Contact : 8309965388</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id12')">Close</button>
+            </div>
+
+
+
+            <div class="card Present filterDiv" id="modelMarathon">
+                <div class="cardImg">
+                    <img src="/assets/images/events/modelmaratho.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MODEL MARATHON</h5>
+                    <h6>Fee: 399/- (By Full Registration)</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id13')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id13">
+                <h2>MODEL MARATHON</h2>
+                <p>This event is open for all the branch people. </p>
+                <li>Contact: 8973131999</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id13')">Close</button>
+            </div>
+
+
+
+            <div class="card Present filterDiv" id="modelUnitedNations">
+                <div class="cardImg">
+                    <img src="/assets/images/events/MUN WITH STRIP.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MODEL UNITED NATIONS</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id14')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id14">
+                <h2>MODEL UNITED NATIONS</h2>
+                <li>Participants qualified will be referred as delegates and will play the role of a country's
+                    representative.</li>
+                <li>Do a keen research on the topic and the country you were alloted to.</li>
+                <li>Follow the rules for the procedure of debates, resolutions, amendments etc made during the
+                    conference.</li>
+                <li>Final winner will be selected by a panel of judges only.</li>
+                <li>Contact: 7995592137</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id14')">Close</button>
+            </div>
+
+
+
+            <div class="card lit filterDiv" id="wordSphere">
+                <div class="cardImg">
+                    <img src="/assets/images/events/wordsphere.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>WORD SPHERE</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id15')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id15">
+                <h2>WORD SPHERE</h2>
+                <li>In this event the participants will be tested on their grammatical skills.</li>
+                <li>This event totally consists of 3 Rounds</li>
+                <li>1st round will be screening test</li>
+                <li>2nd round consists of some MCQ's.</li>
+                <li>Based on cutoff you will be moved into final round.</li>
+                <li>Contact: 9032004048</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id15')">Close</button>
+            </div>
+
+
+
+            <div class="card Art filterDiv" id="clickOMania">
+                <div class="cardImg">
+                    <img src="/assets/images/events/com.jpg" class="com-img" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>CLICK O MANIA</h5>
+                    <h6>Fee: 399/- (By Full Registration)</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id16')">Description</button>
+                      <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id16">
+                <h2>CLICK O MANIA</h2>
+                <li>Theme : Elements of Nature</li>
+                <li>Complete Details of yours is compulsory.</li>
+                <li>Picture should be submitted in JPEG Format and should have good resolution.</li>
+                <li>Picture editing should be done through basic android apps only!</li>
+                <li>Each participant can submit upto 10 entries</li>
+                <li>Send your best clicks to our mail ID : clickomania.srkriste25@gmail.com</li>
+                <li>Contact: 9849105962</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id16')">Close</button>
+            </div>
+
+
+
+            <div class="card Art filterDiv" id="artSpace">
+                <div class="cardImg">
+                    <img src="/assets/images/events/art space.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>ART-SPACE</h5>
+                    <h6>Fee: 399/- (By Full Registration)</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id17')">Description</button>
+                    <div class="button">
+                        <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id17">
+                <h2>ART-SPACE</h2>
+                <li>Consisting 2 streams : Art Gallery and Spot Painting.</li>
+                <li>ART Gallery : you can exhibit your previous paintings</li>
+                <li>SPOT painting : you can draw your ideas with the provided stationary.</li>
+                <li>No plagarisms will be encouraged. </li>
+                <li>Contact: 9110338792</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id17')">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Start Footer Area -->
+   <footer class="footer" style="background-color: #f8f9fa; color: #343a40; padding: 20px 0;">
+    <div class="container">
+        <div class="row gy-3 align-items-center"> 
+            <!-- Venue Location -->
+            <div class="col-lg-6 col-md-6 col-12" style="margin-top: 10px;">
+                <div class="single-footer f-link">
+                    <h3 style="font-weight: bold; margin-bottom: 20px;">Venue Location</h3>
+                    <p style="margin: 5px 0;"><i class="fas fa-calendar-alt"></i> 21-22 February, 2025</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-map-marker-alt"></i> W Block - 201, S. R. K. R Engineering College</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-phone"></i> Contact Us - 9492926008</p>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+           <div class="col-lg-6 col-md-6 col-12">
+  <div class="single-footer f-about">
+    <h3 class="fw-bold mb-3">Social Connection</h3>
+    <h5 type="none">Stay tuned and follow us for more updates</h5>
+    <ul class="social d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mt-2 list-unstyled">
+    
+      <li>
+        <a href="https://www.facebook.com/SrkrIste" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-facebook-f" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://youtube.com/@srkriste1995" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-youtube" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/srkriste" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-instagram" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/srkriste/" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-linkedin-in" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://whatsapp.com/channel/0029Vb41PK39Gv7TwRz8rW1e" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-whatsapp" style="font-size: 15px;"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+    </div>
+
+    <!-- Copyright Area -->
+    <div class="copyright text-center" style="background-color: #e9ecef; padding: 10px 0; font-size: 14px;">
+        <div class="container">
+            <p class="mb-0">© 2025 Nipuna. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+     
+   
+    <script>
+
+        filterSelection("all")
+        function filterSelection(className) {
+            var elements = document.getElementsByClassName("filterDiv");
+            if (className == "all") {
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "none";
+                }
+
+                var filteredElements = document.getElementsByClassName(className);
+                for (var i = 0; i < filteredElements.length; i++) {
+                    filteredElements[i].style.display = "block";
+                }
+            }
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("event-btn");
+        var mybtn;
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var elements = document.getElementsByClassName("event-btn");
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].style.backgroundColor = "#eef2eb";
+                }
+                this.style.backgroundColor = "#21d185";
+            });
+
+        }
+
+
+        // Handle input changes
+function handleSearchInput() {
+    var input = document.getElementById('myInput').value.toLowerCase();
+    updateSearchResults(input);
+}
+
+// Handle search button click
+function performSearch() {
+    var input = document.getElementById('myInput').value.toLowerCase();
+    updateSearchResults(input);
+    
+    // If there's only one result, automatically select it
+    let visibleItems = Array.from(document.getElementsByClassName('item'))
+        .filter(item => item.style.display !== 'none');
+    
+    if (visibleItems.length === 1) {
+        const eventId = visibleItems[0].querySelector('a').getAttribute('href').substring(1);
+        filterByEventId(eventId);
+        document.getElementById('list').style.display = "none";
+    }
+}
+
+// Update search results
+function updateSearchResults(input) {
+    let items = document.getElementsByClassName('item');
+    let list = document.getElementById('list');
+    let noResults = document.getElementById('demo');
+    let matchFound = false;
+
+    for (let i = 0; i < items.length; i++) {
+        let text = items[i].textContent.trim().toLowerCase();
+        if (text.startsWith(input)) {
+            items[i].style.display = "list-item";
+            // Add click event listener to each visible item
+            items[i].onclick = function(e) {
+                e.preventDefault();
+                const eventId = this.querySelector('a').getAttribute('href').substring(1);
+                filterByEventId(eventId);
+                list.style.display = "none";
+                document.getElementById('myInput').value = this.textContent;
+            };
+            matchFound = true;
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+    
+    noResults.style.display = matchFound ? "none" : "block";
+    list.style.display = input ? "block" : "none";
+}
+
+function filterByEventId(eventId) {
+    // Get all event cards
+    var elements = document.getElementsByClassName("filterDiv");
+    
+    // Hide all events first
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+    
+    // Show only the selected event
+    var selectedEvent = document.getElementById(eventId);
+    if (selectedEvent) {
+        selectedEvent.style.display = "block";
+    }
+    
+    // Reset active button styles
+    var btns = document.getElementsByClassName("event-btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].style.backgroundColor = "#eef2eb";
+    }
+}
+
+// Modify the existing filterSelection function
+function filterSelection(className) {
+    var elements = document.getElementsByClassName("filterDiv");
+    if (className == "all") {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.display = "block";
+        }
+    } else {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.display = "none";
+        }
+
+        var filteredElements = document.getElementsByClassName(className);
+        for (var i = 0; i < filteredElements.length; i++) {
+            filteredElements[i].style.display = "block";
+        }
+    }
+    // Clear the search input when using category filters
+    document.getElementById('myInput').value = '';
+    document.getElementById('list').style.display = "none";
+}
+
+// Add keyboard support for search
+document.getElementById('myInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        performSearch();
+    }
+});
+
+
+
+
+        function openForm(p1) {
+            document.getElementById(p1).style.display = "block";
+            if (p1 == 'popup-id12') {
+                document.getElementById('popup-id12').style.width = "55%";
+            }       
+        }
+
+        function closeForm(p2) {
+            document.getElementById(p2).style.display = "none";
+        }
+
+
+    </script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/tiny-slider.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>NIPUNA 25</title>
+    <meta name="description" content="" />
+ <!-- Ensure this is in <head> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/NIPUNAHD.png" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   
+</head>
+
+<body>
+    
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+    <!-- pop-up-->
+<div class="modal fade" id="couponModal" tabindex="-1" role="dialog" aria-labelledby="couponModalLabel" 
+     aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border-radius: 15px; border: 2px solid #e0e0e0;">
+            <!-- Progress Bar (3 second timer) -->
+            <div class="progress" style="height: 4px;">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 100%; transition: width 3s linear;"></div>
+            </div>
+            
+            <div class="modal-header" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 13px 13px 0 0;">
+                <h5 class="modal-title text-white" id="couponModalLabel">
+                    <i class="fas fa-gift me-2"></i>Special Offer! 🎉
+                </h5>
+            </div>
+            
+            <div class="modal-body text-center py-4">
+                <div class="coupon-container mb-3 p-3" style="background: #f8f9fa; border-radius: 10px;">
+                    <h4 class="text-muted mb-3">Apply Coupon Code</h4>
+                    <div class="d-flex align-items-center justify-content-center gap-2">
+                        <div class="coupon-code display-5 fw-bold" 
+                             style="background: linear-gradient(45deg, #ec4899, #f59e0b);
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;">
+                            NIPUNA2K25
+                        </div>
+                        <button class="btn btn-sm btn-copy" 
+                                style="background: #f3e8ff; border: 1px solid #d8b4fe;"
+                                data-code="NIPUNA2K25">
+                            <i class="fas fa-copy text-primary"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="text-secondary mb-2">Use this code during registration to avail exclusive discount!</p>
+                <small class="text-muted fw-bold" style="color: #ef4444 !important;">
+                    <i class="fas fa-clock me-1"></i>Valid for first 100 registrations
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    // Show modal
+    $('#couponModal').modal('show');
+    
+    // Start progress bar animation
+    $('.progress-bar').css('width', '0%');
+    
+    // Auto-close after 3 seconds
+    setTimeout(() => {
+        $('#couponModal').modal('hide');
+    }, 5000);
+
+    // Copy functionality
+    $('.btn-copy').click(function(){
+        const code = $(this).data('code');
+        navigator.clipboard.writeText(code);
+        
+        // Visual feedback
+        $(this).html('<i class="fas fa-check text-success"></i>');
+        setTimeout(() => {
+            $(this).html('<i class="fas fa-copy text-primary"></i>');
+        }, 2000);
+    });
+});
+</script>
+
+<style>
+.coupon-code {
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-copy {
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.btn-copy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(99, 102, 241, 0.2);
+    background: #e9d5ff !important;
+}
+</style>
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html" style="color: white;">
+                                <img src="assets/images/NIPUNAHD.png" alt="Logo">NIPUNA 2025
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>  
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <style>
+                                .navbar-nav .nav-item a {
+                                text-decoration: none;
+                                transition: transform 0.3s ease-in-out, color 0.3s ease; 
+                                color: #fff; /* Set default text color */
+                                }
+
+                                @media(min-width: 576px){
+                                    .navbar-nav .nav-item a:hover {
+                                transform: scale(1.2); /* Scale up the link slightly */
+                                color: gold !important; /* Change color on hover (you can adjust the color as needed) */
+                                }
+                                }
+                            </style>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="index.html" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="about-us.html" aria-label="Toggle navigation">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="events.html" aria-label="Toggle navigation">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="team.html" aria-label="Toggle navigation">Team</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="contact.html" aria-label="Toggle navigation">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Hero Area -->
+    <section class="hero-area">
+        <div class="main__circle"></div>
+        <div class="main__circle2"></div>
+        <div class="main__circle3"></div>
+        <div class="main__circle4"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
+                    <div class="hero-content">
+                        <h3 style="color: white;font-family: cursive;font-weight: bold;font-size: 30px;">Are you all set for?</h3>
+                        <br>
+                        <br>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">National level Techno-management Symposium
+                        NIPUNA 2025</h2>
+                        <h5 class="wow zoomIn" data-wow-delay=".2s"><i class="lni lni-map-marker"></i>W-block, SRKR Engineering College</h5>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">21st, 22nd February.</p>
+                        <div class="button wow fadeInUp" data-wow-delay=".8s">
+                            <a href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" target="_blank" class="btn ">REGISTER NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Hero Area -->
+
+    <!-- Start Count Down Area -->
+    <div class="count-down">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box-head">
+                        <div class="box-content">
+                            <div class="box">
+                                <h1 id="days">00</h1>
+                                <h2 id="daystxt">Days</h2>
+                            </div>
+                            <div class="box">
+                                <h1 id="hours">00</h1>
+                                <h2 id="hourstxt">Hours</h2>
+                            </div>
+                            <div class="box">
+                                <h1 id="minutes">00</h1>
+                                <h2 id="minutestxt">Minutes</h2>
+                            </div>
+                            <div class="box">
+                                <h1 id="seconds">00</h1>
+                                <h2 id="secondstxt">Seconds</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="alert" style="display: none;">
+                <p>Countdown expired!</p>
+            </div>
+            
+        </div>
+    </div>
+    <!-- End Count Down Area -->
+
+    
+
+    <!-- Start About Area -->
+    <section class="about section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".4s">
+                    <div class="about-image">
+                        <img src="assets/images/Nipuna25.jpg" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".6s">
+                    <div class="content">
+                        <h4>Join the event</h4>
+                        <h2>We create and turn into reality</h2>
+                        <p>
+                            NIPUNA, the National Level Techno-Management Symposium organized by the ISTE student chapter at SRKREC for nearly three decades, is a hub of excellence and innovation. This annual event provides a dynamic platform for students to showcase their talents through workshops, seminars and technical and non-technical competitions. Beyond the classroom, participants gain hands-on experience, refine problem-solving skills and engage in friendly competition. As a visionary knowledge nexus, NIPUNA fosters creativity and knowledge exchange, shaping future leaders and innovators poised to make a lasting impact.
+                        </p>
+                        <div class="date">
+                            <h4><span>21st</span>&<span style="margin-left: 10px;">22nd</span> February 2025</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Area -->
+
+    <!-- Start Events Schedule Area -->
+    <section class="events-schedule section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Events</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Events</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 col-12">
+                    <!-- Start Events Schedule Tab -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="one-tab" data-bs-toggle="tab" data-bs-target="#one"
+                                type="button" role="tab" aria-controls="one" aria-selected="true">Technical Events</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="two-tab" data-bs-toggle="tab" data-bs-target="#two"
+                                type="button" role="tab" aria-controls="two" aria-selected="false">Managerial Events</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="three-tab" data-bs-toggle="tab" data-bs-target="#three"
+                                type="button" role="tab" aria-controls="three" aria-selected="false">Presentational Events</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="four-tab" data-bs-toggle="tab" data-bs-target="#four"
+                                type="button" role="tab" aria-controls="four" aria-selected="false">Artistic Events</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="five-tab" data-bs-toggle="tab" data-bs-target="#five"
+                                type="button" role="tab" aria-controls="five" aria-selected="false">Literature Events</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="one" role="tabpanel" aria-labelledby="one-tab">
+                            <!-- Start Events Head -->
+                            <div class="events-head">
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-7 col-12 mt-3">
+                                            <div class="event-info">
+                                                <div class="info">
+                                                    <h4>
+                                                        Code Combat
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a > Event Coordinators: B.Venkat, T. Sanjay</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a> 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>9392465584</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-12 d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/venkat.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/sanjay.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-7 col-12">
+                                            <div class="event-info">
+                                                <div class="info">
+                                                    <h4>
+                                                        Mechonica
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a > Event Coordinator: M. Vasu deva rao</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>7569177485</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-12 d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/vasudevarao.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                 <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Electrolance
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinator: K. Tarunesh</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>9063656569</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-12 d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/tarunesh.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Struqta
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinator: D. Gowtham</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>6300900493</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-12 d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/gowtham.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                            </div>
+                            <!-- End Events Head -->
+                        </div>
+                        <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
+                            <!-- Start Events Head -->
+                            <div class="events-head">
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        IPL Auction
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinator: K. Jagadeesh</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>7995592137</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-12 d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/jagadeesh.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Mind Quest
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinator: M. Dharani</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>7013698278</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-12 d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image" >
+                                                    <img src="assets/images/speakers1/ebm/dharani.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Mystery Mansion
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinator: P. Surya</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>9100259275</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/surya.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                 <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Business Capital
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: SK. Rehaman, L. Mounika</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>9858203786</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/rehaman.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/mounika.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Uniqus
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: D. Gowtham, K. Deepika</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>6300900493</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/gowtham.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/deepika.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                         Cascade
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: K. Rajesh</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>9618181690</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image" >
+                                                    <img src="assets/images/speakers1/ebm/rajesh.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                            </div>
+                            <!-- End Events Head -->
+                        </div>
+                        <div class="tab-pane fade" id="three" role="tabpanel" aria-labelledby="three-tab">
+                            <!-- Start Events Head -->
+                            <div class="events-head">
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Poster Arena
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: G. Bhanuteja, K. Ratna kumari</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>7095389239</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/bhanuTeja.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/ratna.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Model Marathon
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: T. Rohith, N. Kaivalya</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>8973131999</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/rohit.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/kaivalya.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Model United Nations
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: K. Jagadeesh, N. Kaivalya</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>7995592137</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/jagadeesh.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/kaivalya.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                 <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Presencia
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: L. Mounika, P. Harsha, M. Vasu deva rao, B. Monika</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>8309965388</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/mounika.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/harsha.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/vasudevarao.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/monika.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                            </div>
+                            <!-- End Events Head -->
+                        </div>
+                        <div class="tab-pane fade" id="four" role="tabpanel" aria-labelledby="four-tab">
+                            <!-- Start Events Head -->
+                            <div class="events-head">
+                                <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Artspace
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: Y. Srihari, B. Venkat</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>9110338792</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/srihari.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/venkat.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                                 <!-- Start Single Event -->
+                                <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+
+                                                <div class="info">
+                                                    <h4>
+                                                        Click O Mania
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: P. Harsha, B. Monika</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>9849105962</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/harsha.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/monika.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                            </div>
+                            <!-- End Events Head -->
+                        </div>
+                        <div class="tab-pane fade" id="five" role="tabpanel" aria-labelledby="five-tab">
+                            <!-- Start Events Head -->
+                            <div class="events-head">
+                                  <!-- Start Single Event -->
+                                  <div class="single-event">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-7 col-12">
+                                            <div class="event-info">
+                                                <div class="info">
+                                                    <h4>
+                                                        WORDSPHERE
+                                                    </h4>
+                                                    <ul>
+                                                        <li><i class="lni lni-user"></i>
+                                                            <a  > Event Coordinators: K. Ratna Kumari, S. Vijaya Lakshmi</a>
+                                                        </li>
+                                                        <li><i class="lni lni-alarm-clock"></i>
+                                                            <a  > 9:00 AM - 05:00 PM</a>
+                                                        </li>
+                                                        <li> <i class="lni lni-phone"></i>
+                                                             <a>9949051209</a>
+                                                        </li> 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-12  d-md-flex flex-row justify-content-end">
+                                            <div class="event-info">
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/ratna.jpg" alt="#">
+                                                </div>
+                                                <div class="image">
+                                                    <img src="assets/images/speakers1/ebm/vijayalakshmi.jpg" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Event -->
+                            </div>
+                            <!-- End Events Head -->
+                        </div>
+                    </div>
+                    <!-- End Events Schedule Tab -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Events Schedule Area -->
+
+    <!-- Start Pricing Table Area -->
+    <section id="pricing" class="pricing-table section overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title white-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".0s">pricing</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".1s">Pricing & Plans</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".2s">Get Your Combos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                    <!-- Single Table -->
+                    <div class="single-table text-center">
+                        <!-- Table Head -->
+                        <div class="table-head">
+                            <h4 class="title">Full Registration</h4>
+                            <p>Available tickets for this price</p>
+                            <div class="price">
+                                <h2 class="amount">Rs.399</h2>
+                            </div>
+                        </div>
+                        <!-- End Table Head -->
+                        <div class="button">
+                            <a   class="btn" href="https://events.studenttribe.in/event/67af33d6884980a7260e8197">Get Ticket</a>
+                        </div>
+                        <!-- Start Table Content -->
+                        <div class="table-content">
+                            <!-- Table List -->
+                            <ul class="table-list">
+                                <b><li><h4 style="font-weight: bold;">FREE ACCOMMODATION</h4></li></b>
+                                <b><li>+</li></b>
+                                <b><li><h4 style="font-weight: bold;">FREE FOOD</h4></li></b>
+                            </ul>
+                            <!-- End Table List -->
+                        </div>
+                        <!-- End Table Content -->
+                    </div>
+                    <!-- End Single Table-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".3s">
+                    <!-- Single Table -->
+                    <div class="single-table">
+                        <!-- Table Head -->
+                        <div class="table-head">
+                            <h4 class="title">COMBO-1</h4>
+                            <p>Available tickets for this price</p>
+                            <div class="price">
+                                <h2 class="amount">Rs.149</h2>
+                            </div>
+                        </div>
+                        <!-- End Table Head -->
+                        <div class="button">
+                            <a   class="btn" href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Get Ticket</a>
+                        </div>
+                        <!-- Start Table Content -->
+                        <div class="table-content">
+                            <!-- Table List -->
+                            <ul class="table-list">
+                                <li>IPL AUCTION</li>
+                                <li>MIND QUEST</li>
+                                <li>ANY TECHNICAL EVENT
+                                </li>
+                            </ul>
+                            <!-- End Table List -->
+                        </div>
+                        <!-- End Table Content -->
+                    </div>
+                    <!-- End Single Table-->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                    <!-- Single Table -->
+                    <div class="single-table">
+                        <!-- Table Head -->
+                        <div class="table-head">
+                            <h4 class="title">COMBO-2</h4>
+                            <p>Available tickets for this price</p>
+                            <div class="price">
+                                <h2 class="amount">Rs.149</h2>
+                            </div>
+                        </div>
+                        <!-- End Table Head -->
+                        <div class="button">
+                            <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Get Ticket</a>
+                        </div>
+                        <!-- Start Table Content -->
+                        <div class="table-content">
+                            <!-- Table List -->
+                            <ul class="table-list">
+                                <li>UNIQUS</li>
+                                <li>CASCADE</li>
+                                <li>ANY TECHNICAL EVENT</li>
+                            </ul>
+                            <!-- End Table List -->
+                        </div>
+                        <!-- End Table Content -->
+                    </div>
+                    <!-- End Single Table-->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".5s">
+                    <!-- Single Table -->
+                    <div class="single-table">
+                        <!-- Table Head -->
+                        <div class="table-head">
+                            <h4 class="title">COMBO-3</h4>
+                            <p>Available tickets for this price</p>
+                            <div class="price">
+                                <h2 class="amount">Rs.149</h2>
+                            </div>
+                        </div>
+                        <!-- End Table Head -->
+                        <div class="button">
+                            <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Get Ticket</a>
+                        </div>
+                        <!-- Start Table Content -->
+                        <div class="table-content">
+                            <!-- Table List -->
+                            <ul class="table-list">
+                                <li>MYSTERY MANSION</li>
+                                <li>WORDSPHERE</li>
+                                <li>ANY TECHNICAL EVENT</li>
+                            </ul>
+                            <!-- End Table List -->
+                        </div>
+                        <!-- End Table Content -->
+                    </div>
+                    <!-- End Single Table-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Pricing Table Area -->
+    <section class="sponsors section">
+    
+        <div class="footer-container">
+            <!-- Title Sponsors Row -->
+            <h2 class="row-header">Title Sponsors</h2>
+            <div class="sponsor-row title-sponsor">
+                <div class="sponsor-box">
+                    <img src="assets/images/sponsors/Priyanka skin clinic logo copy.png" alt="Edmium">
+                    <!-- Add sponsor content here -->
+                </div>
+                <div class="sponsor-box">
+                    <img src="assets/images/sponsors/Sri Syam Kanchi Sarry House Logo (English).jpg" alt="Sri Syam Kanchi Sarry House">
+                    <!-- Add sponsor content here -->
+                </div>
+            </div>
+    
+            <!-- Partners Row -->
+           <div class="container">
+           <div class="row">
+                <div class="sponsor-row sponsor-row-3">
+                <div class="sponsor-box">
+                    <h3 class="sponsor-title" style="font-size:17px;">Food Partner</h3>
+                    <div class="sponsor-box-inner">
+                        <img src="/assets/images/sponsors/rayalasema ruchulu.jpg" alt="Food Partner">
+                        <!-- Add sponsor content here -->
+                        
+                    </div>
+                </div>
+                <div class="sponsor-box">
+                    <h3 class="sponsor-title" style="font-size:17px;">Media Partner</h3>
+                    <div class="sponsor-box-inner">
+                        <img src="/assets/images/sponsors/BLACK LOGO.png" alt="Media Partner">
+                        <!-- Add sponsor content here -->
+                    </div>
+                </div>
+                 <div class="sponsor-box">
+                    <h3 class="sponsor-title" style="font-size:15px;">Community & Growth Partner</h3>
+                    <div class="sponsor-box-inner">
+                        
+                        <img src="/assets/images/Asset 1.png" alt="Community Partner" class="std-tribe" style="height: 100px">
+                        <!-- Add sponsor content here -->
+                    </div>
+                </div>
+            </div>
+           </div>
+        </div>
+            <!-- Our Sponsors Row -->
+            <h2 class="row-header">Our Sponsors</h2>
+            <div class="sponsor-row sponsor-row-2">
+                <div class="small-sponsor-box">
+                    <img src="/assets/images/sponsors/iste al.jpg" alt="ISTE Alumni" style="height:90px;width:100px;" >
+                </div>
+                <div class="small-sponsor-box">
+                    <img src="/assets/images/sponsors/SRKREC copy.jpg" alt="SRKREC Alumni"  style="height:90px;width:100px;">
+                </div>
+                <div class="small-sponsor-box">
+                    <img src="/assets/images/sponsors/edmium.jpg" alt="edmium" style="height:100px;width:100px;" >
+                </div>
+                <div class="small-sponsor-box">
+                    <img src="/assets/images/sponsors/house of pops.jpg" alt="House of Pops" style="height:90px;width:100px;" >
+                </div>
+                <div class="small-sponsor-box">
+                    <img src="/assets/images/sponsors/RC copy.jpg" alt="Ravindra commercial" style="height:90px">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Start Call Action Area -->
+    <section class="call-action overlay style2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-8 col-12">
+                    <div class="inner-content">
+                        <div class="text">
+                            <h5>Hurry Up!</h5>
+                            <h2>National level Techno-management Symposium</h2>
+                            <p>An inspiring blend of technology and innovation,
+                                 Nipuna is not just a symposium but a dynamic hub for game-changing ideas and impactful speakers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-4 col-12">
+                    <div class="button">
+                        <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Call Action Area -->
+
+    <!-- Start Footer Area -->
+  <footer class="footer" style="background-color: #f8f9fa; color: #343a40; padding: 20px 0;">
+    <div class="container">
+        <div class="row gy-3 align-items-center"> 
+            <!-- Venue Location -->
+            <div class="col-lg-6 col-md-6 col-12" style="margin-top: 10px;">
+                <div class="single-footer f-link">
+                    <h3 style="font-weight: bold; margin-bottom: 20px;">Venue Location</h3>
+                    <p style="margin: 5px 0;"><i class="fas fa-calendar-alt"></i> 21-22 February, 2025</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-map-marker-alt"></i> W Block - 201, S. R. K. R Engineering College</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-phone"></i>  Contact Us - 9492926008</p>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+           <div class="col-lg-6 col-md-6 col-12">
+  <div class="single-footer f-about">
+    <h3 class="fw-bold mb-3">Social Connection</h3>
+    <h5 type="none">Stay tuned and follow us for more updates</h5>
+    <ul class="social d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mt-2 list-unstyled">
+    
+      <li>
+        <a href="https://www.facebook.com/SrkrIste" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-facebook-f" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://youtube.com/@srkriste1995" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-youtube" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/srkriste" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-instagram" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/srkriste/" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-linkedin-in" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://whatsapp.com/channel/0029Vb41PK39Gv7TwRz8rW1e" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-whatsapp" style="font-size: 15px;"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+    </div>
+
+    <!-- Copyright Area -->
+    <div class="copyright text-center" style="background-color: #e9ecef; padding: 10px 0; font-size: 14px;">
+        <div class="container">
+            <p class="mb-0">© 2025 Nipuna. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const finaleDate = new Date("February 21, 2025 09:00:00").getTime(); // Fixed final date for the event
+
+    const timer = () => {
+        const now = new Date().getTime();
+        let diff = finaleDate - now; // Calculate the difference between current time and finale date
+
+        const alertBox = document.querySelector('.alert'); // Ensure these exist in your HTML
+        const container = document.querySelector('.container');
+        const daysElem = document.querySelector('#days');
+        const hoursElem = document.querySelector('#hours');
+        const minutesElem = document.querySelector('#minutes');
+        const secondsElem = document.querySelector('#seconds');
+
+        if (diff < 0) {
+            if (alertBox) alertBox.style.display = 'block';  // Show alert if countdown is over
+            // container.style.display = 'none';  // Hide the countdown container
+            return;  // Stop execution if countdown is over
+        }
+
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Format numbers to ensure two digits for hours, minutes, and seconds
+        daysElem.textContent = String(days).padStart(3, '0');
+        hoursElem.textContent = String(hours).padStart(2, '0');
+        minutesElem.textContent = String(minutes).padStart(2, '0');
+        secondsElem.textContent = String(seconds).padStart(2, '0');
+    };
+
+    timer(); // Initialize the timer once
+    setInterval(timer, 1000); // Update every second
+});
+</script>
+
+</body>
+
+</html>

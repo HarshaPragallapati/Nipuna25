@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Team</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/NIPUNAHD.png" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="/assets/css/animate.css" />
+    <link rel="stylesheet" href="/assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <style>
+        .card {
+            position: relative;
+            width: 200px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background: #fff;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .social-popup {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 8px;
+            border-radius: 5px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .card:hover .social-popup {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .social-popup a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            width:30px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+
+        .container1 {
+            max-width: 1400px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .division {
+            margin-bottom: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+            align-items: center;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-weight: bold;
+            color: #373535;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .card{
+                padding: 10px;
+                width: 150px;
+                
+            }
+            .card img {
+                width: 80px;
+                height: 80px;
+            }
+            .card p {
+                font-size: 12px;
+            }
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .f-about{
+                margin-top: 53px!important;
+                margin-bottom: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+   
+     <!-- Preloader -->
+     <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+   <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html" style="color: white;">
+                                <img src="assets/images/NIPUNAHD.png" alt="Logo">NIPUNA 2025
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>  
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <style>
+                                .navbar-nav .nav-item a {
+                                text-decoration: none;
+                                transition: transform 0.3s ease-in-out, color 0.3s ease; 
+                                color: #fff; /* Set default text color */
+                                }
+
+                                @media(min-width: 576px){
+                                    .navbar-nav .nav-item a:hover {
+                                transform: scale(1.2); /* Scale up the link slightly */
+                                color: gold !important; /* Change color on hover (you can adjust the color as needed) */
+                                }
+                                }
+                            </style>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="index.html" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="about-us.html" aria-label="Toggle navigation">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="events.html" aria-label="Toggle navigation">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="team.html" aria-label="Toggle navigation">Team</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="contact.html" aria-label="Toggle navigation">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="button">
+                                <a   class="btn"  href="https://events.studenttribe.in/event/67af33d6884980a7260e8197" >Register Now</a>
+                            </div>
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container container1">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">SRKR ISTE (2024-2025)</h1>
+                        <ul class="breadcrumb-nav">
+                            <li><a href="/">Home</a></li>
+                            <li>SRKR ISTE (2024-2025)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    
+
+
+<!-- Start Speakers Area -->
+    <section class="speakers section">
+        <div class="container container1">
+            <div class="division">
+                <h3 style="margin-bottom: 50px;">SENIOR BODY MEMBERS</h3>
+                <div class="grid">
+                    <!-- Row 1 -->
+                    <div class="card">
+                        <img src="/assets/images/speakers1/sridhar.jpg" alt="Member 14">
+                        <p>P. SRIDHAR</p>
+                        <p>4/4 ECE</p>
+                        <p>CHAIRPERSON</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/sridhar_patruni?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D1" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/sridharpathruni?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/sridhar-pathruni-4a2b52232" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/shanmukha.jpg" alt="Member 12">
+                        <p>S. SHANMUKHA PRIYA</p>
+                        <p>4/4 CSBS</p>
+                        <p>VICE-CHAIRPERSON</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/shanmukhapriya_sirigineedi?utm_source=qr&igshid=OGIxMTE0OTdkZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61550696563040&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/shanmukha-priya-360600282" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/vara .jpg" alt="Member 17">
+                        <p>A. VARA PRASAD</p>
+                        <p>4/4 CSE</p>
+                        <p>STUDENT COUNSELLOR</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/varaprasadakireddy?igsh=MTZ5YjNmbmNmbm95aQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61550649075645&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/akireddy-kali-hanumanth-varaprasad-862460261" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/aish.jpg" alt="Member 1">
+                        <p>P. S. S. L. AISHWARYA</p>
+                        <p>4/4 IT</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/patchigollaaishwarya?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61552210785411&mibextid=9R9pXO" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/patchigolla-aishwarya-698b0128b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/bhuvana.jpg" alt="Member 2">
+                        <p>M. BHUVANESWARI</p>
+                        <p>4/4 CSBS</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/bhuvana..07?utm_source=qr&igshid=OGU0MmVlOWVjOQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100086310380615&mibextid=avESrC" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/bhuvaneswari-maredu-602105253" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/chandu .jpg" alt="Member 3">
+                        <p>B. CHANDU</p>
+                        <p>4/4 AIDS</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/chandu_999__?utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/chandu-b-805260297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+    
+                    <!-- Row 2 -->
+                    <div class="card">
+                        <img src="/assets/images/speakers1/gaensh .jpg" alt="Member 4">
+                        <p>P. VENKATA GANESH</p>
+                        <p>4/4 CIVIL</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/ganeshpabbineedi?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100075256697110&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/ganesh-pabbineedi-97075628b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/kalyan.jpg" alt="Member 5">
+                        <p>B. KALYAN SUBHASH</p>
+                        <p>4/4 CSE</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.co/kalyansubhash__bomma?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100094595657495&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/b-kalyan-subhash-62711728a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/manogna.jpg" alt="Member 6">
+                        <p>B. N. S. MANOGNA</p>
+                        <p>4/4 IT</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/_sai_manogna?utm_source=qr&igshid=MThlNWY1MzQwNA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100079009443702" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/manogna-budida-271539263" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/prasanthi.jpg" alt="Member 7">
+                        <p>S. PRASANTHI</p>
+                        <p>4/4 AIML</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/prasanthi.sypu?utm_source=qr&igshid=YzU1NGVlODEzOA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100078960515275&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/prasanthi-sypu-26bb97252" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/praveen.jpg" alt="Member 8">
+                        <p>S. PRAVEEN KUMAR</p>
+                        <p>4/4 ECE</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/_ece__student__birifin" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/sannidhi.praveenkumar?mibextid=avESrC" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/help/linkedin/?trk=p_settings_helpcenter_globalnav_android" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/raja.jpg" alt="Member 9">
+                        <p>VANKA RAJA</p>
+                        <p>4/4 AIML</p>
+                        <p>SENIOR TREASURER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/rajavanka4?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/raja.vanka.50?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/raja-vanka-b1a625251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+                    
+    
+                    <!-- Row 3 -->
+                    <div class="card">
+                        <img src="/assets/images/speakers1/resham.jpg" alt="Member 10">
+                        <p>D. RESHMA</p>
+                        <p>4/4 AIML</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/d_reshma677?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100078727008567&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/reshma-dudekula-915909279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/sahithi.jpg" alt="Member 11">
+                        <p>A. SAHITHI</p>
+                        <p>4/4 IT</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/anne.sahithi?igshid=NGVhN2U2NjQ0Yg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100078857467401" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/sahithi-anne-8950b7264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/sharmila.jpg" alt="Member 13">
+                        <p>MD. SHARMILA BEGUM</p>
+                        <p>4/4 CSBS</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/mohammad._sharmila?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100079311682004&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/sharmila-mohammad-11aaaa28b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/surendra.jpg" alt="Member 15">
+                        <p>G. NAGA SURENDRA</p>
+                        <p>4/4 CSD</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/introvert_surendra/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/NAGASURENDRA1919?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/naga-surendra-335971207" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/udaya.jpg" alt="Member 16">
+                        <p>CH. UDAYA</p>
+                        <p>4/4 AIML</p>
+                        <p>SENIOR BODY MEMBER</p>        
+                        <div class="social-popup">
+                            <a href="https://instagram.com/udayachoragani?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100078650361358" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/udaya-choragani-175a47263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="/assets/images/speakers1/yaswanth.jpg" alt="Member 18">
+                        <p>G. YASHWANTH SAI</p>
+                        <p>4/4 CSD</p>
+                        <p>SENIOR BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://instagram.com/yaswnthsai?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/yaswanth.sai.50702?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/g-yaswanth-sai-bb4719285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container container1">
+            <div class="division">
+                <h3 style="margin-top: 50px;margin-bottom: 50px;">EXECUTIVE BODY MEMBERS</h3>
+                <div class="grid">
+                    <!-- Row 1 -->
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/pavanSai.jpg" alt="Member 12">
+                        <p>V. PAVAN SAI NAGENDRA</p>
+                        <p>3/4 AIDS</p>
+                        <p>SECRETARY</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/ps_n_indra?utm_source=qr&igsh=c2JuN2lqcWJrcGM2" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/H1juY7SFQc7BW3NW/?mibextid=qi2Omg" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/pavan-sai-9a46a42b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/narayana.jpg" alt="Member 11">
+                        <p>P. LAKSHMI NARAYANA</p>
+                        <p>3/4 MECH</p>
+                        <p>JOINT SECRETARY</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/mrcrack1402?igsh=MTh2OXF6NW03Y3Zjcg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/EjoEwSprJBWudvhQ/?mibextid=qi2Omg" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/lakshmi-narayana-ponala-589943324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/ajay.jpg" alt="Member 1">
+                        <p>K. AJAY KUMAR</p>
+                        <p>3/4 ECE</p>
+                        <p>TREASURER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/its.me.jay?igsh=MWQzYXF3NTU1MGJ1ZQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61550782088541&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/k-ajay-5a859026a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/mounika.jpg" alt="Member 10">
+                        <p>L. MOUNIKA</p>
+                        <p>3/4 CSE</p>
+                        <p>WEB INCHARGE</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/moonu_3533?utm_source=qr&igsh=MXIzd29tZmxuYXlhdg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61565378553782&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/mounika-lanka-a688312a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/bhanuTeja.jpg" alt="Member 1">
+                        <p>G. BHANU TEJA</p>
+                        <p>3/4 AIDS</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/notyour_bhanu_teja?igsh=N3ZxNTQ2bGlzbXNh" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100039322820947&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/bhanu-teja-gubbala-587674293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/deepika.jpg" alt="Member 1">
+                        <p>K. D. N. DEEPIKA</p>
+                        <p>3/4 AIML</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/deepika_naidu" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61559578467879" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/deepika-katreddy-1347352a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+    
+                    <!-- Row 2 -->
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/dharani.jpg" alt="Member 4">
+                        <p>M. DHARANI SAVITHRI</p>
+                        <p>3/4 CSE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/dharani_savithri_mallempalli?igsh=OGd2MHRpODZtd2oz" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61564244776237&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/dharanisavithri?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/gowtham.jpg" alt="Member 5">
+                        <p>D. SAI GOWTHAM</p>
+                        <p>3/4 ECE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/sai_gowtham_2.0?igsh=MTJndTIwZGI0ODNjNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61565461860191&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/darisi-sai-gowtham-515861302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/harsha.jpg" alt="Member 6">
+                        <p>P. HARSHA</p>
+                        <p>3/4 CSE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/harsha_pragallapati/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/1EaD5ShUN2/" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/harsha-pragallapati-16a61b324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/jagadeesh.jpg" alt="Member 7">
+                        <p>K. UMA JAGADEESH</p>
+                        <p>3/4 AIML</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/user_pride?igsh=MWp0dGc2aThrcjZtOA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100009236771989&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/jagadeesh-uma-a4259a259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/kaivalya.jpg" alt="Member 8">
+                        <p>N. KAIVALYA</p>
+                        <p>3/4 CSE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/kaivalya_nemani?igsh=MWxtZ2gwNHZwNzR2eA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/nemani-kaivalya-4812a02b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/monika.jpg" alt="Member 9">
+                        <p>B. MONIKA</p>
+                        <p>3/4 CSE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/monika_a628?utm_source=qr&igsh=MXd3cXNuYmF2enRmNQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/monika-b-3b89332a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+    
+                    <!-- Row 3 -->
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/rajesh.jpg" alt="Member 13">
+                        <p>K. VENKATA RAJESH</p>
+                        <p>3/4 AIML</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/19.d.7?igsh=cGp6djlqZ3hvM3h1" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100008735619178&mibextid=rpYtZJ0wVrwH2Glu" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/venkata-rajesh-kanaparthi-519163327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/ratna.jpg" alt="Member 14">
+                        <p>K. A. P. RATNA KUMARI</p>
+                        <p>3/4 AIML</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/ratna_katuri?igsh=MXEyOGRxa3lmaWJtZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61565218031691&sfnsn=wiwspwa&mibextid=RUbZ1f" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/ratna-kumari-katuri-91a406318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/rehaman.jpg" alt="Member 15">
+                        <p>SK. ABDUL REHAMAN</p>
+                        <p>3/4 AIDS</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/mr.rehaman_25" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/shaik.abdulrehaman.786#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/rehaman26" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/rohit.jpg" alt="Member 16">
+                        <p>T. ROHITH SAI VARMA</p>
+                        <p>3/4 AIDS</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/rohithvarma238?utm_source=qr&igsh=cTVjYWthOG1ka2du" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/niRW7WP7SLQS8ALX/?mibextid=qi2Omg" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/rohith-varma-471786327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/sanjay.jpg" alt="Member 17">
+                        <p>T. V. SANJAY REDDY</p>
+                        <p>3/4 CSE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/sanjay__1024/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100093324023416&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/sanjay-tadi-a1314a29a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/srihari.jpg" alt="Member 18">
+                        <p>Y. SRIHARI</p>
+                        <p>3/4 ECE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/hariarjun2004?igsh=eW9rb25odGwwaW1w" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61564825641564&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/srihari-yamarthi-4418bb327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+    
+                    <!-- Row 4 -->
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/surya.jpg" alt="Member 19">
+                        <p>P. S. R. S. REDDY</p>
+                        <p>3/4 AIML</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/surya_padala_04?igsh=ZHBvdnE2MmljdjJn" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/surya-padala-761660292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/tarunesh.jpg" alt="Member 20">
+                        <p>K. TARUNESH</p>
+                        <p>3/4 ECE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/tarunesh._.koya?igsh=aHJnNmNtZG5vbnFt" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/Tarunesh.Koya?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/tarunesh-koya-19b171248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/vasudevarao.jpg" alt="Member 21">
+                        <p>M. VASU DEVA RAO</p>
+                        <p>3/4 MECH</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/mr_luuser_boi_?igsh=MWY5OHF2ejZkMDhs" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100052875548861&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/vasudevam7172a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/venkat.jpg" alt="Member 22">
+                        <p>B. V. S. VIDHYA SAGAR</p>
+                        <p>3/4 CIC</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/venkat_23__?igsh=MXhsaHJ6ZjI2enZoYg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/venkatsai.vidhyasagar?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/bvs-vidhya-sagar-991945314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/assets/images/speakers1/ebm/vijayalakshmi.jpg" alt="Member 23">
+                        <p>S. VIJAYA LAKSHMI</p>
+                        <p>3/4 EEE</p>
+                        <p>EXECUTIVE BODY MEMBER</p>
+                        <div class="social-popup">
+                            <a href="https://www.instagram.com/vijaya_vijji54?utm_source=qr&igsh=aGxkN2Jhb3l0ZWs3" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/65aiRbppvPY7C1yV/?mibextid=qi2Omg" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/vijayalakshmi-sistu-a54185327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /End Speakers Area -->
+
+    
+
+    <!-- Start Footer Area -->
+<footer class="footer" style="background-color: #f8f9fa; color: #343a40; padding: 20px 0;">
+    <div class="container">
+        <div class="row gy-3 align-items-center"> 
+            <!-- Venue Location -->
+            <div class="col-lg-6 col-md-6 col-12" style="margin-top: 10px;">
+                <div class="single-footer f-link">
+                    <h3 style="font-weight: bold; margin-bottom: 20px;">Venue Location</h3>
+                    <p style="margin: 5px 0;"><i class="fas fa-calendar-alt"></i> 21-22 February, 2025</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-map-marker-alt"></i> W Block - 201, S. R. K. R Engineering College</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-phone"></i>  Contact Us - 9492926008</p>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+           <div class="col-lg-6 col-md-6 col-12">
+  <div class="single-footer f-about">
+    <h3 class="fw-bold mb-3">Social Connection</h3>
+    <h5 type="none">Stay tuned and follow us for more updates</h5>
+    <ul class="social d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mt-2 list-unstyled">
+    
+      <li>
+        <a href="https://www.facebook.com/SrkrIste" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-facebook-f" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://youtube.com/@srkriste1995" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-youtube" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/srkriste" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-instagram" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/srkriste/" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-linkedin-in" style="font-size: 15px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://whatsapp.com/channel/0029Vb41PK39Gv7TwRz8rW1e" target="_blank" class="text-decoration-none" style="color: white;">
+          <i class="fab fa-whatsapp" style="font-size: 15px;"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+    </div>
+
+    <!-- Copyright Area -->
+    <div class="copyright text-center" style="background-color: #e9ecef; padding: 10px 0; font-size: 14px;">
+        <div class="container">
+            <p class="mb-0">© 2025 Nipuna. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/tiny-slider.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
